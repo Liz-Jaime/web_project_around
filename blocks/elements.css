@@ -1,0 +1,89 @@
+.elements {
+  width: 282px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 48px;
+}
+
+.element {
+  width: 282px;
+  height: 361px;
+  position: relative;
+}
+
+.element__item {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.element__photo-caption {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -55px;
+  width: 246px;
+  height: 23px;
+  padding-left: 24px;
+}
+
+.element__caption {
+  margin: 0;
+  color: black;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.element__like {
+  width: 20.76px;
+  height: 18.13px;
+}
+
+.element__like:hover {
+  opacity: 50%;
+}
+
+.element__rectangle {
+  width: 282px;
+  height: 361px;
+  background-color: #ffffff;
+  color: black;
+  align-content: baseline;
+  border-radius: 10px;
+  margin: 0;
+  margin-top: -282px;
+  z-index: 0;
+}
+
+.element__trash {
+  width: 18px;
+  height: 19.3px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+}
+
+.element__trash:hover {
+  opacity: 60%;
+}
+
+@media screen and (min-width: 880px) and (max-width: 1280px) {
+  .elements {
+    width: 581px;
+    gap: 17px;
+    padding-bottom: 67px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .elements {
+    width: 880px;
+    gap: 17px;
+    padding-bottom: 67px;
+  }
+}

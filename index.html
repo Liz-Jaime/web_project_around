@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alrededor de los EEUU</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="page">
+    <header class="header">
+      <img
+        class="header__logo"
+        src="./images/Around_Vector_Header.svg"
+        alt="logo"
+      />
+    </header>
+    <main class="main">
+      <section class="profile">
+        <img class="profile__img" src="./images/Liz.jpg" alt="profile photo" />
+        <div class="container">
+          <div class="container_name_button">
+            <h1 class="profile__name">Lizzy Jaime</h1>
+            <button class="profile__edit_button">
+              <img
+                src="./images/Edit_button_Vector.png"
+                class="profile__vector_edit"
+                alt="vector editar"
+              />
+            </button>
+          </div>
+          <p class="profile__about">Explorer and cyclist</p>
+        </div>
+        <button class="profile__add_button">
+          <img
+            src="./images/Vector_+.png"
+            class="profile__vector_add"
+            alt="vector más"
+          />
+        </button>
+      </section>
+
+      <div class="popup popup_content_profile">
+        <div class="popup__overlay"></div>
+        <div class="popup__content">
+          <button class="popup__close-btn">x</button>
+          <div class="popup__body">
+            <h2 class="popup__title">Editar Perfil</h2>
+            <form class="form" id="form-profile">
+              <input
+                type="text"
+                class="form__input form__input_content_name"
+                name="name"
+                placeholder="Nombre"
+              />
+              <span class="form_error"></span>
+              <input
+                type="text"
+                name="about"
+                class="form__input form__input_content_about"
+                placeholder="Acerca de mí"
+              />
+              <span class="form_error"></span>
+              <input type="submit" value="Guardar" class="form__submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup popup_content_add-card">
+        <div class="popup__overlay"></div>
+        <div class="popup__content">
+          <button class="popup__close-btn">
+            <img
+              class="popup__close-icon"
+              src="./images/Close Icon.png"
+              alt="icono cerrar"
+            />
+          </button>
+          <div class="popup__body">
+            <h2 class="popup__title">Nuevo Lugar</h2>
+            <form class="form" id="form-add-card">
+              <input
+                type="text"
+                class="form__input form__input_content_title"
+                name="title"
+                placeholder="Título"
+              />
+              <span class="form_error"></span>
+              <input
+                type="text"
+                name="image"
+                class="form__input form__input_content_image"
+                placeholder="Enlace a la imagen"
+              />
+              <span class="form_error"></span>
+              <input type="submit" value="Crear" class="form__submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <section class="elements">
+        <div class="element">
+          <img
+            src="./images/Eagle_rock_Topanga.jpg"
+            alt="paisaje Eagle Rock"
+            class="element__item"
+          />
+
+          <p class="element__rectangle"></p>
+          <img
+            src="./images/vector_trash.svg"
+            class="element__trash"
+            alt="vector basura"
+          />
+          <div class="element__photo-caption">
+            <p class="element__caption">Eagle Rock Topanga</p>
+            <img
+              src="./images/Vector_corazon.svg"
+              class="element__like"
+              alt="vector corazon"
+            />
+          </div>
+        </div>
+        <div class="element">
+          <img
+            src="./images/Glendora_mountain_road.jpg"
+            alt="paisaje Glendora"
+            class="element__item"
+          />
+
+          <p class="element__rectangle"></p>
+          <img
+            src="./images/vector_trash.svg"
+            class="element__trash"
+            alt="vector basura"
+          />
+          <div class="element__photo-caption">
+            <p class="element__caption">Glendora Mountain</p>
+            <img
+              src="./images/Vector_corazon.svg"
+              class="element__like"
+              alt="vector corazon"
+            />
+          </div>
+        </div>
+
+        <div class="element">
+          <img
+            src="./images/Mt_Baldy.jpg"
+            alt="paisaje Baldy"
+            class="element__item"
+          />
+
+          <p class="element__rectangle"></p>
+          <img
+            src="./images/vector_trash.svg"
+            class="element__trash"
+            alt="vector basura"
+          />
+          <div class="element__photo-caption">
+            <p class="element__caption">Mt Baldy</p>
+            <img
+              src="./images/Vector_corazon.svg"
+              class="element__like"
+              alt="vector corazon"
+            />
+          </div>
+        </div>
+        <div class="element">
+          <img
+            src="./images/Limestone_Canyon.jpg"
+            alt="paisaje limestone"
+            class="element__item"
+          />
+
+          <p class="element__rectangle"></p>
+          <img
+            src="./images/vector_trash.svg"
+            class="element__trash"
+            alt="vector basura"
+          />
+          <div class="element__photo-caption">
+            <p class="element__caption">Limestone Canyon</p>
+            <img
+              src="./images/Vector_corazon.svg"
+              class="element__like"
+              alt="vector corazon"
+            />
+          </div>
+        </div>
+
+        <div class="element">
+          <img
+            src="./images/San_Dimas_Canyon.jpg"
+            alt="paisaje San Dimas"
+            class="element__item"
+          />
+
+          <p class="element__rectangle"></p>
+          <img
+            src="./images/vector_trash.svg"
+            class="element__trash"
+            alt="vector basura"
+          />
+          <div class="element__photo-caption">
+            <p class="element__caption">San Dimas Canyon</p>
+            <img
+              src="./images/Vector_corazon.svg"
+              class="element__like"
+              alt="vector corazon"
+            />
+          </div>
+        </div>
+
+        <div class="element">
+          <img
+            src="./images/Santa_Monica_Mountains.jpg"
+            alt="paisaje Santa Monica"
+            class="element__item"
+          />
+
+          <p class="element__rectangle"></p>
+          <img
+            src="./images/vector_trash.svg"
+            class="element__trash"
+            alt="vector basura"
+          />
+          <div class="element__photo-caption">
+            <p class="element__caption">Santa Monica Mountains</p>
+            <img
+              src="./images/Vector_corazon.svg"
+              class="element__like"
+              alt="vector corazon"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2020 Around The U.S.</p>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
