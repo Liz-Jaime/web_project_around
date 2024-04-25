@@ -36,6 +36,9 @@
   font-size: 22px;
   font-weight: 500;
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__edit-button {
@@ -82,6 +85,9 @@
   margin: 0;
   padding-top: 14px;
   padding-bottom: 36px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 880px) and (max-width: 1280px) {
@@ -108,7 +114,6 @@
     width: 200px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
   }
   .profile__add-button {
     width: 150px;
@@ -123,6 +128,7 @@
   .profile {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 880px;
     height: 170px;
     margin: 0;
@@ -132,7 +138,7 @@
     font-size: 42px;
   }
   .profile__about {
-    font-size: 18px;
+    font-size: 15px;
   }
   .profile__container {
     width: 500px;
@@ -140,7 +146,12 @@
   }
   .profile__name-button {
     width: 280px;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .profile__add-button {
+    width: 150px;
   }
   .profile__edit-button {
     width: 24px;
