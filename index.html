@@ -42,10 +42,10 @@
         </button>
       </section>
 
-      <div class="popup popup_content_profile">
+      <section class="popup popup__edit-profile">
         <div class="popup__overlay"></div>
         <div class="popup__content">
-          <button class="popup__close-btn">x</button>
+          <button class="popup__close-btn"></button>
           <div class="popup__body">
             <h2 class="popup__title">Editar Perfil</h2>
             <form class="form" id="form-profile">
@@ -67,18 +67,12 @@
             </form>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="popup popup_content_add-card">
+      <section class="popup popup__add-card">
         <div class="popup__overlay"></div>
         <div class="popup__content">
-          <button class="popup__close-btn">
-            <img
-              class="popup__close-icon"
-              src="./images/Close_Icon.png"
-              alt="icono cerrar"
-            />
-          </button>
+          <button class="popup__close-btn"></button>
           <div class="popup__body">
             <h2 class="popup__title">Nuevo Lugar</h2>
             <form class="form" id="form-add-card">
@@ -100,142 +94,28 @@
             </form>
           </div>
         </div>
-      </div>
+      </section>
 
       <section class="elements">
-        <div class="element">
-          <img
-            src="./images/Eagle_rock_Topanga.jpg"
-            alt="paisaje Eagle Rock"
-            class="element__item"
-          />
-
-          <p class="element__rectangle"></p>
-          <img
-            src="./images/vector_trash.svg"
-            class="element__trash"
-            alt="vector basura"
-          />
-          <div class="element__photo-caption">
-            <p class="element__caption">Eagle Rock Topanga</p>
-            <img
-              src="./images/Vector_corazon.svg"
-              class="element__like"
-              alt="vector corazon"
-            />
+        <template class="template-card">
+          <div class="element">
+            <img class="element__item" src="" alt="" />
+            <button class="element__trash-button"></button>
+            <div class="element__photo-caption">
+              <h2 class="element__caption"></h2>
+              <button class="element__like"></button>
+            </div>
           </div>
-        </div>
-        <div class="element">
-          <img
-            src="./images/Glendora_mountain_road.jpg"
-            alt="paisaje Glendora"
-            class="element__item"
-          />
+        </template>
+      </section>
 
-          <p class="element__rectangle"></p>
-          <img
-            src="./images/vector_trash.svg"
-            class="element__trash"
-            alt="vector basura"
-          />
-          <div class="element__photo-caption">
-            <p class="element__caption">Glendora Mountain</p>
-            <img
-              src="./images/Vector_corazon.svg"
-              class="element__like"
-              alt="vector corazon"
-            />
-          </div>
-        </div>
-
-        <div class="element">
-          <img
-            src="./images/Mt_Baldy.jpg"
-            alt="paisaje Baldy"
-            class="element__item"
-          />
-
-          <p class="element__rectangle"></p>
-          <img
-            src="./images/vector_trash.svg"
-            class="element__trash"
-            alt="vector basura"
-          />
-          <div class="element__photo-caption">
-            <p class="element__caption">Mt Baldy</p>
-            <img
-              src="./images/Vector_corazon.svg"
-              class="element__like"
-              alt="vector corazon"
-            />
-          </div>
-        </div>
-        <div class="element">
-          <img
-            src="./images/Limestone_Canyon.jpg"
-            alt="paisaje limestone"
-            class="element__item"
-          />
-
-          <p class="element__rectangle"></p>
-          <img
-            src="./images/vector_trash.svg"
-            class="element__trash"
-            alt="vector basura"
-          />
-          <div class="element__photo-caption">
-            <p class="element__caption">Limestone Canyon</p>
-            <img
-              src="./images/Vector_corazon.svg"
-              class="element__like"
-              alt="vector corazon"
-            />
-          </div>
-        </div>
-
-        <div class="element">
-          <img
-            src="./images/San_Dimas_Canyon.jpg"
-            alt="paisaje San Dimas"
-            class="element__item"
-          />
-
-          <p class="element__rectangle"></p>
-          <img
-            src="./images/vector_trash.svg"
-            class="element__trash"
-            alt="vector basura"
-          />
-          <div class="element__photo-caption">
-            <p class="element__caption">San Dimas Canyon</p>
-            <img
-              src="./images/Vector_corazon.svg"
-              class="element__like"
-              alt="vector corazon"
-            />
-          </div>
-        </div>
-
-        <div class="element">
-          <img
-            src="./images/Santa_Monica_Mountains.jpg"
-            alt="paisaje Santa Monica"
-            class="element__item"
-          />
-
-          <p class="element__rectangle"></p>
-          <img
-            src="./images/vector_trash.svg"
-            class="element__trash"
-            alt="vector basura"
-          />
-          <div class="element__photo-caption">
-            <p class="element__caption">Santa Monica Mountains</p>
-            <img
-              src="./images/Vector_corazon.svg"
-              class="element__like"
-              alt="vector corazon"
-            />
+      <section class="popup popup__open-image">
+        <div class="popup__overlay"></div>
+        <div class="popup__container-image">
+          <button type="button" class="popup__close-btn"></button>
+          <div class="popup__body">
+            <img class="popup__image" src="" alt="" />
+            <h2 class="popup__image-title"></h2>
           </div>
         </div>
       </section>

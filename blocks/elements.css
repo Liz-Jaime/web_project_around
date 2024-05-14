@@ -1,19 +1,22 @@
 .elements {
-  width: 282px;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  padding-bottom: 48px;
+  gap: 15px;
+  justify-content: center;
 }
 
 .element {
   width: 282px;
   height: 361px;
   position: relative;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
 .element__item {
   width: 100%;
+  height: 80%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -21,16 +24,19 @@
 .element__photo-caption {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin-top: -55px;
-  width: 246px;
-  height: 23px;
-  padding-left: 24px;
+  width: 100%;
+  background-color: #ffffff;
+  height: 20%;
+  margin: 0;
+  border-radius: 0 0 10px 10px;
 }
 
 .element__caption {
+  width: 200px;
   margin: 0;
+  padding: 0;
   color: black;
   font-size: 24px;
   font-weight: 900;
@@ -43,47 +49,34 @@
 .element__like {
   width: 20.76px;
   height: 18.13px;
+  background-color: transparent;
+  border: none;
+  background-image: url("../images/Vector_corazon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.element__like-active {
+  background-image: url("../images/Vector_corazon_negro.png");
 }
 
 .element__like:hover {
   opacity: 50%;
 }
 
-.element__rectangle {
-  width: 282px;
-  height: 361px;
-  background-color: #ffffff;
-  color: black;
-  align-content: baseline;
-  border-radius: 10px;
-  margin: 0;
-  margin-top: -282px;
-  z-index: 0;
-}
-
-.element__trash {
+.element__trash-button {
+  background-image: url(../images/vector_trash.svg);
+  background-color: transparent;
+  border: none;
   width: 18px;
   height: 19.3px;
   position: absolute;
   top: 18px;
   right: 15px;
+  cursor: pointer;
 }
 
-.element__trash:hover {
+.element__trash-button:hover {
   opacity: 60%;
-}
-
-@media screen and (min-width: 880px) and (max-width: 1280px) {
-  .elements {
-    width: 581px;
-    gap: 17px;
-    padding-bottom: 67px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .elements {
-    width: 880px;
-    gap: 17px;
-    padding-bottom: 67px;
-  }
 }
