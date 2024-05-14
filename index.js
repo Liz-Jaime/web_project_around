@@ -46,7 +46,7 @@ const initialCards = [
     link: "./images/Santa_Monica_Mountains.jpg",
   },
 ];
-const imagePopup = document.querySelector(".popup__open_image");
+const imagePopup = document.querySelector("#popup-image");
 
 editButton.addEventListener("click", function () {
   popupProfile.classList.add("popup_open");
