@@ -1,6 +1,6 @@
 const popup = document.querySelector(".popup");
 const editButton = document.querySelector(".profile__edit-button");
-const popupProfile = document.querySelector(".popup__edit_profile");
+const popupProfile = document.querySelector(".popup__profile");
 
 const profileName = document.querySelector(".profile__name");
 const profileAbout = document.querySelector(".profile__about");
@@ -9,7 +9,7 @@ const formInputAbout = document.querySelector(".form__input_content_about");
 const formProfile = document.querySelector("#form-profile");
 
 const addButton = document.querySelector(".profile__add-button");
-const popupAddCard = document.querySelector(".popup__add_card");
+const popupAddCard = document.querySelector(".popup__card");
 const formCard = document.querySelector("#form-add-card");
 const formInputTitle = document.querySelector(".form__input_content_title");
 const formInputLink = document.querySelector(".form__input_content_image");
@@ -46,7 +46,7 @@ const initialCards = [
     link: "./images/Santa_Monica_Mountains.jpg",
   },
 ];
-const imagePopup = document.querySelector(".popup__open_image");
+const imagePopup = document.querySelector(".popup__photo");
 
 editButton.addEventListener("click", function () {
   popupProfile.classList.add("popup_open");
