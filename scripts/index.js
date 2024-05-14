@@ -65,6 +65,12 @@ popupCloseButtons.forEach((button) => {
 
 formProfile.addEventListener("submit", function (evt) {
   evt.preventDefault();
+  if (formInputName.value === "") {
+    return false;
+  }
+  if (formInputAbout.value === "") {
+    return false;
+  }
   profileName.textContent = formInputName.value;
   profileAbout.textContent = formInputAbout.value;
   popup.classList.remove("popup_open");
@@ -72,6 +78,12 @@ formProfile.addEventListener("submit", function (evt) {
 
 formCard.addEventListener("submit", function (evt) {
   evt.preventDefault();
+  if (formInputTitle.value === "") {
+    return false;
+  }
+  if (formInputLink.value === "") {
+    return false;
+  }
   const cardToAdd = cardCreator(formInputTitle.value, formInputLink.value);
   cardArea.prepend(cardToAdd);
   popupAddCard.classList.remove("popup_open");
