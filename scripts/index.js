@@ -50,16 +50,19 @@ const imagePopup = document.querySelector("#popup-image");
 
 editButton.addEventListener("click", function () {
   popupProfile.classList.add("popup_open");
+  document.addEventListener("keydown", closePopupEsc);
 });
 
 addButton.addEventListener("click", function () {
   popupAddCard.classList.add("popup_open");
+  document.addEventListener("keydown", closePopupEsc);
 });
 
 popupCloseButtons.forEach((button) => {
   button.addEventListener("click", function () {
     const popup = button.closest(".popup");
     popup.classList.remove("popup_open");
+    document.removeEventListener("keydown", closePopupEsc);
   });
 });
 
@@ -74,6 +77,7 @@ formProfile.addEventListener("submit", function (evt) {
   profileName.textContent = formInputName.value;
   profileAbout.textContent = formInputAbout.value;
   popup.classList.remove("popup_open");
+  document.removeEventListener("keydown", closePopupEsc);
 });
 
 formCard.addEventListener("submit", function (evt) {
@@ -87,6 +91,7 @@ formCard.addEventListener("submit", function (evt) {
   const cardToAdd = cardCreator(formInputTitle.value, formInputLink.value);
   cardArea.prepend(cardToAdd);
   popupAddCard.classList.remove("popup_open");
+  document.removeEventListener("keydown", closePopupEsc);
 });
 
 function cardCreator(name, link) {
@@ -108,6 +113,7 @@ function cardCreator(name, link) {
 
   cardImage.addEventListener("click", () => {
     imagePopup.classList.add("popup_open");
+    document.addEventListener("keydown", closePopupEsc);
     imagePopup.querySelector(".popup__image").src = link;
     imagePopup.querySelector(".popup__image-title").textContent = name;
   });
@@ -118,3 +124,22 @@ initialCards.forEach(function (element) {
   const newCard = cardCreator(element.name, element.link);
   cardArea.append(newCard);
 });
+
+function closePopupEsc(evt) {
+  if (evt.key === "Escape") {
+    popupProfile.classList.remove("popup_open");
+    popupAddCard.classList.remove("popup_open");
+    imagePopup.classList.remove("popup_open");
+  }
+}
+
+function closePopupClickOutside(evt) {
+  if (evt.target.classList.contains("popup__overlay")) {
+    popupProfile.classList.remove("popup_open");
+    popupAddCard.classList.remove("popup_open");
+    imagePopup.classList.remove("popup_open");
+  }
+}
+popupProfile.addEventListener("click", closePopupClickOutside);
+popupAddCard.addEventListener("click", closePopupClickOutside);
+imagePopup.addEventListener("click", closePopupClickOutside);
