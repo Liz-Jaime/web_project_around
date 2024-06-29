@@ -7,25 +7,29 @@
     <meta name="keywords" content="EUA, explorer, cyclist" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alrededor de los EEUU</title>
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body class="page">
     <header class="header">
       <img
         class="header__logo"
-        src="./images/Around_Vector_Header.svg"
+        id="logo-image"
+        src="<%=require ( './images/Around_Vector_Header.svg' )%>"
         alt="logo"
       />
     </header>
     <main class="main">
       <section class="profile">
-        <img class="profile__img" src="./images/Liz.jpg" alt="profile photo" />
+        <img
+          class="profile__img"
+          src="<%=require ('./images/Liz.jpg')%>"
+          alt="profile photo"
+        />
         <div class="profile__container">
           <div class="profile__name-button">
             <h1 class="profile__name">Lizzy Jaime</h1>
             <button class="profile__edit-button">
               <img
-                src="./images/Edit_button_Vector.png"
+                src="<%=require ('./images/Edit_button_Vector.png')%>"
                 class="profile__vector-edit"
                 alt="vector editar"
               />
@@ -35,7 +39,7 @@
         </div>
         <button class="profile__add-button">
           <img
-            src="./images/Vector_+.png"
+            src="<%=require ('./images/Vector_+.png')%>"
             class="profile__vector-add"
             alt="vector más"
           />
@@ -45,7 +49,7 @@
       <section class="popup" id="popup-edit-profile">
         <div class="popup__overlay"></div>
         <div class="popup__content">
-          <button class="popup__close-btn"></button>
+          <button class="popup__close-btn" id="close-profile-form"></button>
           <div class="popup__body">
             <h2 class="popup__title">Editar Perfil</h2>
             <form class="form" id="form-profile">
@@ -82,7 +86,7 @@
       <section class="popup" id="popup-add-card">
         <div class="popup__overlay"></div>
         <div class="popup__content">
-          <button class="popup__close-btn"></button>
+          <button class="popup__close-btn" id="close-card-form"></button>
           <div class="popup__body">
             <h2 class="popup__title">Nuevo Lugar</h2>
             <form class="form" id="form-add-card">
@@ -128,7 +132,11 @@
       <section class="popup" id="popup-image">
         <div class="popup__overlay"></div>
         <div class="popup__container-image">
-          <button type="button" class="popup__close-btn"></button>
+          <button
+            type="button"
+            class="popup__close-btn"
+            id="close-image-popup"
+          ></button>
           <div class="popup__body">
             <img class="popup__image" src=" " alt=" " />
             <h2 class="popup__image-title"></h2>
@@ -139,7 +147,5 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2020 Around The U.S.</p>
     </footer>
-
-    <script src="./scripts/index.js" type="module"></script>
   </body>
 </html>

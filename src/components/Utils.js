@@ -1,34 +1,44 @@
 import Card from "./Card.js";
+import Popup from "./Popup.js";
+import PopupWithForm from "./PopupWithForm.js";
+import PopupWithImage from "./PopupWithImage.js";
+
+import santaMonicaImage from "../images/Santa_Monica_Mountains.jpg";
+import sanDimasImage from "../images/San_Dimas_Canyon.jpg";
+import limestoneImage from "../images/Limestone_Canyon.jpg";
+import baldyImage from "../images/Mt_Baldy.jpg";
+import glendoraImage from "../images/Glendora_mountain_road.jpg";
+import eagleRockImage from "../images/Eagle_rock_Topanga.jpg";
 
 export const initialCards = [
   {
-    name: "Eagle Rock Topanga",
-    link: "./images/Eagle_rock_Topanga.jpg",
-  },
-  {
-    name: "Glendora Mountain",
-    link: "./images/Glendora_mountain_road.jpg",
-  },
-  {
-    name: "Mt Baldy",
-    link: "./images/Mt_Baldy.jpg",
-  },
-  {
-    name: "Limestone Canyon",
-    link: "./images/Limestone_Canyon.jpg",
+    name: "Santa Monica Mountains",
+    link: santaMonicaImage,
   },
   {
     name: "San Dimas Canyon",
-    link: "./images/San_Dimas_Canyon.jpg",
+    link: sanDimasImage,
   },
   {
-    name: "Santa Monica Mountains",
-    link: "./images/Santa_Monica_Mountains.jpg",
+    name: "Limestone Canyon",
+    link: limestoneImage,
+  },
+  {
+    name: "Mt Baldy",
+    link: baldyImage,
+  },
+  {
+    name: "Glendora Mountain",
+    link: glendoraImage,
+  },
+  {
+    name: "Eagle Rock Topanga",
+    link: eagleRockImage,
   },
 ];
+
 export const popup = document.querySelector(".popup");
 export const editButton = document.querySelector(".profile__edit-button");
-export const popupProfile = document.querySelector("#popup-edit-profile");
 
 export const profileName = document.querySelector(".profile__name");
 export const profileAbout = document.querySelector(".profile__about");
@@ -40,7 +50,7 @@ export const formInputAbout = document.querySelector(
 );
 export const formProfile = document.querySelector("#form-profile");
 export const addButton = document.querySelector(".profile__add-button");
-export const popupAddCard = document.querySelector("#popup-add-card");
+
 export const formCard = document.querySelector("#form-add-card");
 export const formInputTitle = document.querySelector(
   ".form__input_content_title"
@@ -54,7 +64,6 @@ export const popupCloseButtons = Array.from(
 export const template = document.querySelector(".template-card");
 export const cardArea = document.querySelector(".elements");
 
-export const imagePopup = document.querySelector("#popup-image");
 export const cardImage = document.querySelector(".element__item");
 
 export const settings = {
@@ -65,3 +74,7 @@ export const settings = {
   inputErrorClass: "form__input_type_error",
   errorClass: "form__error",
 };
+
+export const closeProfileForm = document.querySelector("#close-profile-form");
+export const closeAddCardForm = document.querySelector("#close-card-form");
+export const closeImagePopup = document.querySelector("#close-image-popup");
