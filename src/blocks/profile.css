@@ -13,6 +13,32 @@
   width: 120px;
   height: 120px;
   border-radius: 60px;
+  position: relative;
+}
+
+.profile__img:hover {
+  opacity: 40%;
+}
+
+.profile__avatar-button {
+  background-color: transparent;
+  opacity: 0%;
+  border: none;
+  position: absolute;
+  padding-left: 50px;
+}
+
+.profile__avatar-button:hover {
+  opacity: 100%;
+}
+
+.profile__icon-edit {
+  cursor: pointer;
+  opacity: 0%;
+}
+
+.profile__icon-edit:hover {
+  opacity: 100%;
 }
 
 .profile__container {

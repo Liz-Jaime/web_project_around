@@ -65,6 +65,13 @@
   opacity: 50%;
 }
 
+.element__like-number {
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 29.05px;
+}
+
 .element__trash-button {
   background-image: url(../images/vector_trash.svg);
   background-color: transparent;
