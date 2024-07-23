@@ -134,14 +134,15 @@ export default class Api {
       body: JSON.stringify({
         avatar: data.avatar,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
-    // .catch((err) => {
-    //   console.log(err);
-    // });
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(`Error: ${res.status}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 }

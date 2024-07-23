@@ -24,32 +24,39 @@ export default class Card {
   getTemplate() {
     return template.cloneNode(true).content.querySelector(".element");
   }
+
   setProperties() {
     this._cardImage = this._card.querySelector(".element__item");
     this._cardTitle = this._card.querySelector(".element__caption");
     this._btnDelete = this._card.querySelector(".element__trash-button");
-    console.log("ownerId", this.owner._id, "userId", this.userId);
+    // console.log("ownerId", this.owner._id, "userId", this.userId);
     if (this.owner._id !== this.userId) {
       this._btnDelete.remove();
     }
     this._btnLike = this._card.querySelector(".element__like");
     this.likesCounter = this._card.querySelector(".element__like-number");
     this.likesCounter.textContent = this.likes.length;
+    const hasUserLiked = this.likes.some((like) => like._id === this.userId);
+    if (hasUserLiked) {
+      this.addLike();
+    }
     this._cardImage.src = this._link;
     this._cardTitle.textContent = this._name;
   }
 
-  handleLike() {
-    this._btnLike.classList.toggle("element__like-active");
+  updatelikes(likes) {
+    this.likesCounter.textContent = likes.length;
+  }
+  addLike() {
+    this._btnLike.classList.add("element__like-active");
+  }
+  removeLike() {
+    this._btnLike.classList.remove("element__like-active");
   }
 
-  handleDelete() {
+  deleteCard() {
     this._card.remove();
   }
-
-  // handleDeleteCard() {
-  //   this._card.classList.add("#popup-delete-card");
-  // }
 
   setEventListeners() {
     this._cardImage.addEventListener("click", () => {
@@ -57,24 +64,21 @@ export default class Card {
     });
 
     this._btnLike.addEventListener("click", () => {
-      this.handleLike();
+      const hasUserLiked = this.likes.some((like) => like._id === this.userId);
+
+      if (hasUserLiked) {
+        this._handleRemoveLike(this._id);
+        this._btnLike.classList.add("element__like-active");
+      } else {
+        this._handleAddLike(this._id);
+      }
     });
 
-    if (this.owner._id !== this.userId) {
+    if (this.owner._id === this.userId) {
       this._btnDelete.addEventListener("click", () => {
-        this.handleDelete(); // sustituir con funcion handleDeleteCard() q tengo que hacer
+        this._handleDeleteCard();
       });
     }
-
-    // const hasUserLiked = this.likes.some((like) => like._id === this.userId);
-    // {
-    //   if (hasUserLiked) {
-    //     this._handleRemoveLike(this._id);
-    //     this._btnLike.classList.toggle("element__like-active");
-    //   } else {
-    //     this._handleAddLike(this._id);
-    //   }
-    // }
   }
   generateCard() {
     this.setProperties();

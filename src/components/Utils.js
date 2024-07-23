@@ -86,3 +86,4 @@ export const closeProfileForm = document.querySelector("#close-profile-form");
 export const closeAddCardForm = document.querySelector("#close-card-form");
 export const closeImagePopup = document.querySelector("#close-image-popup");
 export const closeAvatarForm = document.querySelector("#close-avatar-form");
+export const closeConfirmPopup = document.querySelector("#close-delete-form");

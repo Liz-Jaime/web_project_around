@@ -33,6 +33,7 @@ import {
   closeAddCardForm,
   closeImagePopup,
   closeAvatarForm,
+  closeConfirmPopup,
 } from "../components/Utils.js";
 import FormValidator from "../components/FormValidator.js";
 import UserInfo from "../components/UserInfo.js";
@@ -45,22 +46,56 @@ const api = new Api({
   },
 });
 
+const confirmPopup = new PopupWithConfirmation("#popup-delete-card", () => {
+  api.deleteCard(newCard._id).then(() => {
+    newCard.remove();
+  });
+});
+confirmPopup.setEventListeners();
+closeConfirmPopup.addEventListener("click", () => {
+  confirmPopup.close();
+});
+
+function createCard(item) {
+  const newCard = new Card(
+    item,
+    (name, link) => {
+      imagePopup.open(name, link);
+    },
+    user._userId,
+    () => {
+      confirmPopup.open(item._id);
+      confirmPopup.setFormSubmit(() => {
+        api.deleteCard(item._id).then(() => {
+          confirmPopup.close();
+          console.log(newCard);
+          newCard.deleteCard();
+        });
+      });
+    },
+    () => {
+      api.addLike(newCard._id).then((res) => {
+        newCard.addLike();
+        newCard.updatelikes(res.likes);
+      });
+    },
+    () => {
+      api.removeLike(newCard._id).then((res) => {
+        newCard.removeLike();
+        newCard.updatelikes(res.likes);
+      });
+    }
+  );
+  return newCard.generateCard();
+}
+
 api.getInitialCards().then((result) => {
   const section = new Section(
     {
       items: result,
       renderer: (item) => {
-        const newCard = new Card(
-          item,
-          (name, link) => {
-            imagePopup.open(name, link);
-          },
-          user._userId, //confirmPopup.open(id de la card);
-          () => {},
-          () => {},
-          () => {}
-        ).generateCard();
-        section.addItem(newCard);
+        const card = createCard(item);
+        section.addItem(card);
       },
     },
     ".elements"
@@ -70,7 +105,7 @@ api.getInitialCards().then((result) => {
   const popupAddCard = new PopupWithForm("#popup-add-card", (inputs) => {
     console.log(inputs);
     api.addCard(inputs).then((result) => {
-      const newCard = new Card(result, () => {}).generateCard();
+      const newCard = createCard(result);
       section.addItem(newCard);
     });
   });
@@ -92,24 +127,11 @@ const user = new UserInfo({
 
 api.getUserInfo().then((result) => {
   user.setUserInfo(result);
-  console.log(user);
-});
-
-const confirmPopup = new PopupWithConfirmation("#popup-delete-card", () => {
-  api.deleteCard(newCard._id).then(() => {
-    newCard.remove();
-  }); //la funcion para borrar cartas que hice en archis API;
-});
-confirmPopup.setEventListeners();
-btnDelete.addEventListener("click", () => {
-  confirmPopup.open();
+  // console.log(user);
 });
 
 const imagePopup = new PopupWithImage("#popup-image");
 imagePopup.setEventListeners();
-// cardImage.addEventListener("click", () => {
-//   imagePopup.open();
-// });
 closeImagePopup.addEventListener("click", () => {
   imagePopup.close();
 });
@@ -122,6 +144,7 @@ const popupProfile = new PopupWithForm("#popup-edit-profile", (inputs) => {
 popupProfile.setEventListeners();
 editButton.addEventListener("click", () => {
   popupProfile.open();
+  console.log("open");
 });
 closeProfileForm.addEventListener("click", () => {
   popupProfile.close();
