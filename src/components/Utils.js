@@ -3,40 +3,6 @@ import Popup from "./Popup.js";
 import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
 
-// import santaMonicaImage from "../images/Santa_Monica_Mountains.jpg";
-// import sanDimasImage from "../images/San_Dimas_Canyon.jpg";
-// import limestoneImage from "../images/Limestone_Canyon.jpg";
-// import baldyImage from "../images/Mt_Baldy.jpg";
-// import glendoraImage from "../images/Glendora_mountain_road.jpg";
-// import eagleRockImage from "../images/Eagle_rock_Topanga.jpg";
-
-// export const initialCards = [
-//   {
-//     name: "Santa Monica Mountains",
-//     link: santaMonicaImage,
-//   },
-//   {
-//     name: "San Dimas Canyon",
-//     link: sanDimasImage,
-//   },
-//   {
-//     name: "Limestone Canyon",
-//     link: limestoneImage,
-//   },
-//   {
-//     name: "Mt Baldy",
-//     link: baldyImage,
-//   },
-//   {
-//     name: "Glendora Mountain",
-//     link: glendoraImage,
-//   },
-//   {
-//     name: "Eagle Rock Topanga",
-//     link: eagleRockImage,
-//   },
-// ];
-
 export const popup = document.querySelector(".popup");
 export const editButton = document.querySelector(".profile__edit-button");
 export const avatarButton = document.querySelector(".profile__avatar-button");

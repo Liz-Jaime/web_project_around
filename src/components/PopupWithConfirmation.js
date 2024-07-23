@@ -18,16 +18,11 @@ export default class PopupWithConfirmation extends Popup {
     this._cardId = cardId;
   }
 
-  // close() {
-  //   super.close();
-  //   this._cardId.remove(cardId);
-  // }
-
   setEventListeners() {
     super.setEventListeners();
     this._confirmButton.addEventListener("click", (evt) => {
       evt.preventDefault();
-      // console.log("prueba");
+
       this._handleFormSubmit(this._cardId);
       super.close();
     });

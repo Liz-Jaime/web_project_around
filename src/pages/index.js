@@ -150,11 +150,6 @@ closeProfileForm.addEventListener("click", () => {
   popupProfile.close();
 });
 
-// const popupAddCard = new PopupWithForm("#popup-add-card", (inputs) => {
-//   const newCard = new Card(inputs.title, inputs.image).generateCard();
-//   cardArea.prepend(newCard);
-// });
-
 const popupAvatar = new PopupWithForm("#popup-edit-avatar", (inputs) => {
   api.editAvatar(inputs).then((result) => {
     user.setUserInfo(result);

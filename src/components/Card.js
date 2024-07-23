@@ -29,7 +29,7 @@ export default class Card {
     this._cardImage = this._card.querySelector(".element__item");
     this._cardTitle = this._card.querySelector(".element__caption");
     this._btnDelete = this._card.querySelector(".element__trash-button");
-    // console.log("ownerId", this.owner._id, "userId", this.userId);
+
     if (this.owner._id !== this.userId) {
       this._btnDelete.remove();
     }
